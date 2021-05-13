@@ -15,17 +15,14 @@ const User = mongoose.model('user', UserSchema);
 
 exports.User = User;
 exports.createUser = (userData)=>{
-    console.log("db mongo")
 
     var user = new User(userData);
     return new Promise(function(resolve, reject) {
         user.save()
             .then(user => {
-                console.log("User saved!");
                 resolve(user);
             })
             .catch(err => {
-                console.log("Error saving user: " + err);
                 reject(err);
             })
     })

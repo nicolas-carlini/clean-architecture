@@ -1,5 +1,9 @@
 const {createUser} = require('./user');
+const express = require('express');
+var router = express.Router();
 
-exports.assignRoutes = (app)=>{
-    app.post('/user', createUser);
-}
+router.post('/user', createUser);
+
+module.exports = router;
+
+

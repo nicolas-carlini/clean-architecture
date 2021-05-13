@@ -1,19 +1,27 @@
-const {validDataHard} = require("../toolBox/validData");
 const {createUser} = require("../adapterDB/user")
+const { assert, object, number, string } = require("superstruct")
 
-const userBasicInfo = [
-    'surname',
-    'lastname',
-    'dni'
-]
+
+const userSchema = object({
+    surname: string(),
+    lastname: string(),
+    dni: number()
+})
+  
 
 exports.createUser = (userData)=>{
-    console.log("domain")
     return new Promise((resolve, reject)=>{
         try {
-            validDataHard(userData, userBasicInfo)
+            assert(userData, userSchema)
             user = createUser(userData)
-            resolve(user)
+            user.then(user => {
+                console.log("User saved!");
+                resolve({
+                    msg:"user as created",
+                    id:user._id
+                })
+            })
+            
         } catch (error) {
             reject(error)
         }
