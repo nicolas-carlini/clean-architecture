@@ -8,6 +8,7 @@ const userBasicInfo = [
 ]
 
 exports.createUser = (userData)=>{
+    console.log("domain")
     return new Promise((resolve, reject)=>{
         try {
             validDataHard(userData, userBasicInfo)

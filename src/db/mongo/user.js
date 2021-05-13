@@ -1,8 +1,8 @@
-const {DBConnectMongoose} = require('../../toolBox/dbTools');
+const {DBConnectMongoose,getDBConexion} = require('../../toolBox/dbTools');
 const mongoose = require('mongoose');
 
 // database connect
-const db = db_tools.getDBConexion();
+const db = getDBConexion();
 
 const UserSchema = new mongoose.Schema({
     surname: String,
@@ -14,7 +14,9 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model('user', UserSchema);
 
 exports.User = User;
-exports.createUser = function(userData) {
+exports.createUser = (userData)=>{
+    console.log("db mongo")
+
     var user = new User(userData);
     return new Promise(function(resolve, reject) {
         user.save()

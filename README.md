@@ -6,7 +6,6 @@ Este proyecto es principalmente una prueba de diseño, por capaz y desacoplable.
 
 ![Texto alternativo](/assets/created_user_diagram.png)
 
-
 ### Fuentes e inspiraciones
 
 [clean architecture](https://devexperto.com/clean-architecture-android/)
