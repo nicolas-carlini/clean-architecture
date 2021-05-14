@@ -14,10 +14,10 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model('user', UserSchema);
 
 exports.User = User;
-exports.createUser = (userData)=>{
 
+exports.createUser = (userData)=>{
     var user = new User(userData);
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject)=>{
         user.save()
             .then(user => {
                 resolve(user);
@@ -27,3 +27,16 @@ exports.createUser = (userData)=>{
             })
     })
 }
+
+exports.batchCreateUser = (userList)=>{
+    return new Promise((resolve, reject)=>{
+        User.insertMany(userList)
+            .then((documents)=>{
+                resolve(documents)
+            })
+            .catch((error)=>{
+                reject(error)
+            })
+    })
+}
+

@@ -1,4 +1,4 @@
-const {createUser} = require("../adapterDB/user")
+const {createUser, batchCreateUser} = require("../adapterDB/user")
 const { assert, object, number, string } = require("superstruct")
 
 
@@ -23,6 +23,29 @@ exports.createUser = (userData)=>{
             })
             
         } catch (error) {
+            reject(error)
+        }
+    })
+}
+
+exports.batchCreateUser = (userList)=>{
+    return new Promise((resolve, reject)=>{
+        try {
+            userList.forEach(user => {
+                assert(user, userSchema)
+            });
+
+            batchCreateUser(userList)
+            .then(users => {
+                console.log("Users saved!");
+                resolve({
+                    msg:"users as created",
+                    ids:users.map(user=>user._id)
+                })
+            })
+            
+        } catch (error) {
+            console.log(error)
             reject(error)
         }
     })
