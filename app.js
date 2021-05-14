@@ -1,5 +1,5 @@
 const express = require('express');
-const routes = require('./src/routes/routes');
+const routes = require('./src/routes');
 
 exports.main = async ()=>{
         const app = express();

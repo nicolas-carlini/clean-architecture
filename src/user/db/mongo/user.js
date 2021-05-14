@@ -1,4 +1,4 @@
-const {DBConnectMongoose,getDBConexion} = require('../../toolBox/dbTools');
+const {DBConnectMongoose,getDBConexion} = require('../../../toolBox/dbTools');
 const mongoose = require('mongoose');
 
 // database connect
