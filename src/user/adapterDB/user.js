@@ -1,4 +1,5 @@
-const { createUser, batchCreateUser } = require('../db/mongo/user')
+const {stage} = require('../../../configs')
+const { createUser, batchCreateUser } = require(`../db/${stage.DB}/user`)
 
 exports.createUser = (user) => {
     return new Promise((resolve, reject) => {

@@ -1,9 +1,14 @@
 exports.mongo = {
-    PASS: process.env.MONGO_PASS || 'NcRgOBvKwgh4076k',
-    USER: process.env.MONGO_USER || 'clean',
+    PASS: process.env.MONGO_PASS || 'pass',
+    USER: process.env.MONGO_USER || 'tenant',
     TENANT: process.env.TENANT || 'TEST'
 }
 
-exports.dev = {
-    DB: process.env.DB || "mongo"
+const stages = {
+    dev:{
+        DB: process.env.DB || "mongo"
+    }
 }
+exports.dev = stages['dev']
+
+exports.stage = stages['dev']
