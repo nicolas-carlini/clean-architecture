@@ -1,21 +1,21 @@
-const {createUser,batchCreateUser} = require('../restAdapter/user');
+const { createUser, batchCreateUser } = require("../restAdapter/user");
 
-exports.createUser = (req, res, next) => {
-    createUser(req.body)
-        .then(user => {
-            res.send(user)
-        })
-        .catch(error => {
-            res.status(400).json({error});
-        })
-}
+exports.createUser = async (req, res, next) => {
+  try {
+    const user = await createUser(req.body);
 
-exports.batchCreateUser = (req, res) => {
-    batchCreateUser(req.body)
-        .then(user => {
-            res.send(user)
-        })
-        .catch(error => {
-            res.status(400).json({error});
-        })
-}
+    res.send(user);
+  } catch (error) {
+    res.status(400).json({ error });
+  }
+};
+
+exports.batchCreateUser = async (req, res) => {
+  try {
+    const users = await batchCreateUser(req.body);
+
+    res.send(users);
+  } catch (error) {
+    res.status(400).json({ error });
+  }
+};

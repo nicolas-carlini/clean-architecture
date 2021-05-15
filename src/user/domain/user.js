@@ -1,54 +1,33 @@
-const {createUser, batchCreateUser} = require("../adapterDB/user")
-const { assert, object, number, string } = require("superstruct")
+const { createUser, batchCreateUser } = require("../adapterDB/user");
+const { assert, object, number, string } = require("superstruct");
 
+const { assertList, getIds } = require("../../toolBox/utils");
 
 const userSchema = object({
-    surname: string(),
-    lastname: string(),
-    dni: number()
-})
-  
+  surname: string(),
+  lastname: string(),
+  dni: number(),
+});
 
-exports.createUser = (userData)=>{
-    return new Promise((resolve, reject)=>{
-        try {
-            assert(userData, userSchema)
-            user = createUser(userData)
-            user.then(user => {
-                console.log("User saved!");
-                resolve({
-                    msg:"user as created",
-                    id:user._id
-                })
-            })
-            
-        } catch (error) {
-            reject(error)
-        }
-    })
-}
+exports.createUser = async (userData) => {
+  assert(userData, userSchema);
 
-exports.batchCreateUser = (userList)=>{
-    return new Promise((resolve, reject)=>{
-        try {
-            userList.forEach(user => {
-                assert(user, userSchema)
-            });
+  const user = await createUser(userData);
 
-            batchCreateUser(userList)
-            .then(users => {
-                console.log("Users saved!");
-                resolve({
-                    msg:"users as created",
-                    usersCreated:users.length,
-                    ids:users.map(user=>user._id)
-                })
-            })
-            .catch(err => reject(err))
-            
-        } catch (error) {
-            console.log(error)
-            reject(error)
-        }
-    })
-}
+  return {
+    msg: "user has been created",
+    id: user._id,
+  };
+};
+
+exports.batchCreateUser = async (userList) => {
+  assertList(userList, userSchema);
+
+  const userListCreated = await batchCreateUser(userList);
+
+  return {
+    msg: "users as created",
+    usersCreated: userListCreated.length,
+    ids: getIds(userListCreated),
+  };
+};
