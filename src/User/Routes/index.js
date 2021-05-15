@@ -1,4 +1,4 @@
-const { createUser, batchCreateUser } = require("../Adapters/Rest");
+const { createUser, batchCreateUser } = require("../Framework/express");
 const express = require("express");
 const router = express.Router();
 
