@@ -1,4 +1,4 @@
-const { getDBConexion } = require("../../../../toolBox/dbTools");
+const { getDBConexion } = require("../../../../ToolBox/dbTools");
 const { User } = require("../../../Schemas/Mongo");
 
 const db = getDBConexion();

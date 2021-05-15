@@ -1,4 +1,4 @@
-const Rest = require("../../Adapters/Rest");
+const Rest = require("../../../Adapters/Rest");
 
 exports.createUser = async (req, res, next) => {
   try {

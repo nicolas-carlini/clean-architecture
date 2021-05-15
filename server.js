@@ -1,4 +1,4 @@
-const db_tools = require("./src/toolBox/dbTools");
+const db_tools = require("./src/ToolBox/dbTools");
 const { main } = require("./app");
 
 //TODO: refactor server bootstraper

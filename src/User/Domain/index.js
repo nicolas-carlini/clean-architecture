@@ -1,6 +1,6 @@
 const DB = require("../Adapters/DB");
 const { assert } = require("superstruct");
-const { assertList, getIds } = require("../../toolBox/utils");
+const { assertList, getIds } = require("../../ToolBox/utils");
 const { userSchema } = require("../Schemas/Superstruct");
 
 exports.createUser = async (userData) => {
