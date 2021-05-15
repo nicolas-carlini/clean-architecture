@@ -30,13 +30,23 @@ exports.createUser = (userData)=>{
 
 exports.batchCreateUser = (userList)=>{
     return new Promise((resolve, reject)=>{
-        User.insertMany(userList)
-            .then((documents)=>{
-                resolve(documents)
-            })
-            .catch((error)=>{
-                reject(error)
-            })
+        try{
+            if (userList.length > 890){
+                console.log(userList.length);
+                throw new Error("the max quantity is 100000 users for request");
+            }
+
+            User.insertMany(userList)
+                .then((documents)=>{
+                    resolve(documents)
+                })
+                .catch((error)=>{
+                    reject(error)
+                })
+        }
+        catch(error){
+            reject(error)
+        }
     })
 }
 

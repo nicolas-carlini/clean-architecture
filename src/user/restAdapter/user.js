@@ -17,8 +17,10 @@ exports.batchCreateUser = (body)=>{
         try {
             const {userList} = body
             
-            const id_list = batchCreateUser(userList)
-            resolve(id_list)
+            batchCreateUser(userList)
+                .then(id_list => resolve(id_list))
+                .catch(err => reject(err))
+            
         } catch (error) {   
             reject(error)
         }

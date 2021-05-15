@@ -15,8 +15,9 @@ exports.createUser = (user) => {
 exports.batchCreateUser = (userList) => {
     return new Promise((resolve, reject) => {
         try {
-            const usersCreated = batchCreateUser(userList)
-            resolve(usersCreated)
+            batchCreateUser(userList)
+                .then(usersCreated => resolve(usersCreated))
+                .catch(err => reject(err))
         } catch (error) {
             reject(error)
         }

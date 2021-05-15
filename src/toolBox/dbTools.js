@@ -34,3 +34,7 @@ exports.getDBConexion = ()=>{
     console.log('There is no mongo connection');
     return null;
 }
+
+exports.dbError = ()=>{
+    
+}

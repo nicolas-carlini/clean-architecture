@@ -40,9 +40,11 @@ exports.batchCreateUser = (userList)=>{
                 console.log("Users saved!");
                 resolve({
                     msg:"users as created",
+                    usersCreated:users.length,
                     ids:users.map(user=>user._id)
                 })
             })
+            .catch(err => reject(err))
             
         } catch (error) {
             console.log(error)
