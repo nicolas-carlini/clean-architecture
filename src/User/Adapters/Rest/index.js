@@ -1,8 +1,8 @@
-const { createUser, batchCreateUser } = require("../restAdapter/user");
+const Domain = require("../../Domain");
 
 exports.createUser = async (req, res, next) => {
   try {
-    const user = await createUser(req.body);
+    const user = await Domain.createUser(req.body);
 
     res.send(user);
   } catch (error) {
@@ -12,7 +12,7 @@ exports.createUser = async (req, res, next) => {
 
 exports.batchCreateUser = async (req, res) => {
   try {
-    const users = await batchCreateUser(req.body);
+    const users = await Domain.batchCreateUser(req.body);
 
     res.send(users);
   } catch (error) {

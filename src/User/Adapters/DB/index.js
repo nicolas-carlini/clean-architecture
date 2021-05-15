@@ -1,5 +1,5 @@
-const { stage } = require("../../../configs");
-const DB = require(`../db/${stage.DB}/user`);
+const { stage } = require("../../../../configs");
+const DB = require(`../../Infrastructure/DB/${stage.DB}/`);
 
 exports.createUser = async (user) => await DB.createUser(user);
 

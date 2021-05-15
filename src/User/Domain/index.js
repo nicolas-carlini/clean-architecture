@@ -1,13 +1,7 @@
-const { createUser, batchCreateUser } = require("../adapterDB/user");
-const { assert, object, number, string } = require("superstruct");
-
+const { createUser, batchCreateUser } = require("../Adapters/DB");
+const { assert } = require("superstruct");
 const { assertList, getIds } = require("../../toolBox/utils");
-
-const userSchema = object({
-  surname: string(),
-  lastname: string(),
-  dni: number(),
-});
+const { userSchema } = require("../Schemas/Superstruct");
 
 exports.createUser = async (userData) => {
   assert(userData, userSchema);

@@ -1,19 +1,7 @@
-const { DBConnectMongoose, getDBConexion } = require("../../../toolBox/dbTools");
-const mongoose = require("mongoose");
+const { getDBConexion } = require("../../../../toolBox/dbTools");
+const { User } = require("../../../Schemas/Mongo");
 
-// database connect
 const db = getDBConexion();
-
-const UserSchema = new mongoose.Schema({
-  surname: String,
-  lastname: String,
-  dni: String,
-});
-
-// Register the schema
-const User = mongoose.model("user", UserSchema);
-
-exports.User = User;
 
 exports.createUser = async (userData) => {
   const user = new User(userData);
