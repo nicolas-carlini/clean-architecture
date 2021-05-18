@@ -14,6 +14,37 @@ Este proyecto es principalmente una prueba de diseño, por capaz y desacoplable.
 
 ### TODO list
 
-implement open api with [openapi-backend](https://www.npmjs.com/package/openapi-backend)
+- improve domain disign
+- implement Makefile
+- implement testing [javierlecca](https://github.com/javierlecca/nodejs-hexagonal-architecture-and-unit-test)
+- implement open api with [openapi-backend](https://www.npmjs.com/package/openapi-backend)
+- make cli for create the hexagonal project with nodejs [cli](https://www.sitepoint.com/javascript-command-line-interface-cli-node-js/)
 
-make cli for create the hexagonal project with nodejs [cli](https://www.sitepoint.com/javascript-command-line-interface-cli-node-js/)
+#### Tech todo implement list
+
+1. AMQP
+    - kfka :construction:
+    - rabbitmq :construction:
+    - redis :construction:
+    - sqs :construction:
+
+2. DB
+    - Dynamo :construction:
+    - Mongo :heavy_check_mark:
+    - MySQL :construction:
+    - Postgres :construction:
+
+3. Cache
+    - Redis :construction:
+    - Memcached :construction:
+
+4. File Manager
+    - s3 :construction:
+
+5. Frameworks
+    - Express :construction:
+    - Koa :construction:
+    - hapi :construction:
+
+6. Mails
+    - Sendgrid :construction:
