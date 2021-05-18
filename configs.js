@@ -4,9 +4,15 @@ exports.mongo = {
   TENANT: process.env.TENANT || "TEST",
 };
 
+const ENTITYS = process.env.ENTITYS.split(",")
+
+exports.ENTITYS = ENTITYS
+
 const stages = {
   dev: {
     DB: process.env.DB || "mongo",
+    SERVER: process.env.SERVER || "express",
+    ENTITYS: ENTITYS || [],
   },
 };
 exports.dev = stages["dev"];

@@ -1,8 +1,8 @@
-const { createUser, batchCreateUser } = require("..");
+const { create, batchCreate } = require("..");
 const express = require("express");
 const router = express.Router();
 
-router.post("/createUser", createUser);
-router.post("/batchCreateUser", batchCreateUser);
+router.post("/create", create);
+router.post("/batchCreate", batchCreate);
 
 module.exports = router;

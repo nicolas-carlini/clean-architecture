@@ -1,5 +1,6 @@
 const db_tools = require("./src/ToolBox/dbTools");
-const { main } = require("./app");
+const { stage } = require("./configs");
+const { main } = require(`./src/frameworks/${stage.SERVER}`);
 
 //TODO: refactor server bootstraper
 

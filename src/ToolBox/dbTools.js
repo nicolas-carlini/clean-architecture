@@ -6,6 +6,7 @@ const {mongo} = require('../../configs');
 let db
 
 exports.DBConnectMongoose = ()=>{
+    
     return new Promise((resolve, reject)=>{
         if (db) {
             return db;
@@ -14,6 +15,7 @@ exports.DBConnectMongoose = ()=>{
         mongoose.set('useNewUrlParser', true);
         mongoose.set('useUnifiedTopology', true);
         // database connect
+
         mongoose.connect(`mongodb+srv://${mongo.USER}:${mongo.PASS}@cluster0.e1iwb.mongodb.net/${mongo.TENANT}?retryWrites=true&w=majority`)
             .then(() => {
                 console.log('mongo connection created');

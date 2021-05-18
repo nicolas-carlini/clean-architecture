@@ -3,10 +3,10 @@ const { assert } = require("superstruct");
 const { assertList, getIds } = require("../../ToolBox/utils");
 const { userSchema } = require("../Schemas/Superstruct");
 
-exports.createUser = async (userData) => {
+exports.create = async (userData) => {
   assert(userData, userSchema);
 
-  const user = await DB.createUser(userData);
+  const user = await DB.create(userData);
 
   return {
     msg: "user has been created",
@@ -14,10 +14,10 @@ exports.createUser = async (userData) => {
   };
 };
 
-exports.batchCreateUser = async (userList) => {
+exports.batchCreate = async (userList) => {
   assertList(userList, userSchema);
 
-  const userListCreated = await DB.batchCreateUser(userList);
+  const userListCreated = await DB.batchCreate(userList);
 
   return {
     msg: "users as created",

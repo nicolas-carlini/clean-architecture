@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "e3c3cec0-0746-4617-8f97-043b48f983cf",
+		"name": "clean architecture",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\":{\n        \"surname\":\"nicolas\",\n        \"lastname\":\"carlini\",\n        \"dni\":1234\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:80/User/create",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "80",
+					"path": [
+						"User",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userList\":[\n        {\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },\n        {\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },\n        {\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },\n        {\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },{\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },\n        {\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },{\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },\n        {\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },{\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },\n        {\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },{\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },\n        {\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },{\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },\n        {\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },{\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        },\n        {\n            \"surname\":\"nicolas\",\n            \"lastname\":\"carlini\",\n            \"dni\":1234\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "0.0.0.0:80/User/batchCreate",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "80",
+					"path": [
+						"User",
+						"batchCreate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

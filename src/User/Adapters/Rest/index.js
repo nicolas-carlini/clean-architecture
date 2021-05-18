@@ -1,5 +1,5 @@
 const Domain = require("../../Domain");
 
-exports.createUser = async ({ user }) => await Domain.createUser(user);
+exports.create = async ({ user }) => await Domain.create(user);
 
-exports.batchCreateUser = async ({ userList }) => await Domain.batchCreateUser(userList);
+exports.batchCreate = async ({ userList }) => await Domain.batchCreate(userList);

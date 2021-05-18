@@ -1,6 +1,6 @@
 const { stage } = require("../../../../configs");
 const DB = require(`../../Infrastructure/DB/${stage.DB}/`);
 
-exports.createUser = async (user) => await DB.createUser(user);
+exports.create = async (user) => await DB.create(user);
 
-exports.batchCreateUser = async (userList) => await DB.batchCreateUser(userList);
+exports.batchCreate = async (userList) => await DB.batchCreate(userList);

@@ -3,13 +3,13 @@ const { User } = require("../../../Schemas/Mongo");
 
 const db = getDBConexion();
 
-exports.createUser = async (userData) => {
+exports.create = async (userData) => {
   const user = new User(userData);
   await user.save();
   return user;
 };
 
-exports.batchCreateUser = async (userList) => {
+exports.batchCreate = async (userList) => {
   if (userList.length > 890) {
     console.log(userList.length);
     throw new Error("the max quantity is 890 users for request");
