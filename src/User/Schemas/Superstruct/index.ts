@@ -1,6 +1,6 @@
-const { object, number, string } = require("superstruct");
+import { object, number, string } from "superstruct"
 
-exports.userSchema = object({
+export const userSchema = object({
   surname: string(),
   lastname: string(),
   dni: number(),

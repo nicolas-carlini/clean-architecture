@@ -1,11 +1,10 @@
-const db_tools = require("./src/ToolBox/dbTools");
-const { stage } = require("./configs");
-const { main } = require(`./src/frameworks/${stage.SERVER}`);
+import { DBConnectMongoose } from "./src/ToolBox/dbTools"
+import { stage } from "./configs"
+const { main } = require(`./src/frameworks/${stage.SERVER}`)
 
 //TODO: refactor server bootstraper
 
-db_tools
-  .DBConnectMongoose()
+DBConnectMongoose()
   .then(() => {
     main();
   })

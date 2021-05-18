@@ -1,9 +1,9 @@
-const DB = require("../Adapters/DB");
-const { assert } = require("superstruct");
-const { assertList, getIds } = require("../../ToolBox/utils");
-const { userSchema } = require("../Schemas/Superstruct");
+import * as DB from "../Adapters/DB"
+import { assert } from "superstruct"
+import { assertList, getIds } from "../../ToolBox/utils"
+import { userSchema } from "../Schemas/Superstruct"
 
-exports.create = async (userData) => {
+export async function create(userData) {
   assert(userData, userSchema);
 
   const user = await DB.create(userData);
@@ -14,7 +14,7 @@ exports.create = async (userData) => {
   };
 };
 
-exports.batchCreate = async (userList) => {
+export async function batchCreate(userList) {
   assertList(userList, userSchema);
 
   const userListCreated = await DB.batchCreate(userList);

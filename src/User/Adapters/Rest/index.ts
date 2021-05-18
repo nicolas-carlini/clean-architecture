@@ -1,5 +1,5 @@
-const Domain = require("../../Domain");
+import * as Domain from "../../Domain"
 
-exports.create = async ({ user }) => await Domain.create(user);
+export async function create({ user }) { return await Domain.create(user); }
 
-exports.batchCreate = async ({ userList }) => await Domain.batchCreate(userList);
+export async function batchCreate({ userList }) { return await Domain.batchCreate(userList); }

@@ -1,12 +1,10 @@
-exports.mongo = {
+export const mongo = {
   PASS: process.env.MONGO_PASS || "pass",
   USER: process.env.MONGO_USER || "tenant",
   TENANT: process.env.TENANT || "TEST",
 };
 
-const ENTITYS = process.env.ENTITYS.split(",")
-
-exports.ENTITYS = ENTITYS
+export const ENTITYS = process.env.ENTITYS.split(",")
 
 const stages = {
   dev: {
@@ -15,6 +13,6 @@ const stages = {
     ENTITYS: ENTITYS || [],
   },
 };
-exports.dev = stages["dev"];
+export const dev = stages["dev"];
 
-exports.stage = stages[process.env.STAGE || "dev"];
+export const stage = stages[process.env.STAGE || "dev"];

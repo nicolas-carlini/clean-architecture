@@ -1,8 +1,8 @@
-const express = require("express");
-const { stage } = require("../../../configs");
-const { routesList } = require('../../ToolBox/utils')
+import express from "express"
+import { stage } from "../../../configs"
+import { routesList } from '../../ToolBox/utils'
 
-exports.main = async () => {
+export async function main() {
   const app = express();
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
