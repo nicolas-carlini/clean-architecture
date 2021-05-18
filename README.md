@@ -13,12 +13,12 @@ Este proyecto es principalmente una prueba de diseño, por capaz y desacoplable.
 [CornerCleanArchitectureNode](https://github.com/siro47/CornerCleanArchitectureNode/tree/v3)
 
 ### TODO list
-
-- improve domain disign
-- implement Makefile
-- implement testing [javierlecca](https://github.com/javierlecca/nodejs-hexagonal-architecture-and-unit-test)
-- implement open api with [openapi-backend](https://www.npmjs.com/package/openapi-backend)
-- make cli for create the hexagonal project with nodejs [cli](https://www.sitepoint.com/javascript-command-line-interface-cli-node-js/)
+- change entitys to entities xD
+- improve domain disign :construction:
+- implement Makefile :construction:
+- implement testing [javierlecca](https://github.com/javierlecca/nodejs-hexagonal-architecture-and-unit-test) :construction:
+- implement open api with [openapi-backend](https://www.npmjs.com/package/openapi-backend) :construction: 
+- make cli for create the hexagonal project with nodejs [cli](https://www.sitepoint.com/javascript-command-line-interface-cli-node-js/) :construction:
 
 #### Tech todo implement list
 
