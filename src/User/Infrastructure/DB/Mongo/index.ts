@@ -16,7 +16,11 @@ export async function batchCreate(userList: Array<UserType>) {
     throw new Error("the max quantity is 890 users for request");
   }
 
+  console.log(userList);
+
   const users = await User.insertMany(userList);
+
+  console.log(users)
 
   return users;
 };

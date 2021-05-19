@@ -12,7 +12,6 @@ export async function create(userData: User) {
 };
 
 export async function batchCreate(userList: Array<User>) {
-
   const userListCreated = await DB.batchCreate(userList);
 
   return {
