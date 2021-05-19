@@ -3,7 +3,7 @@
 import mongoose from 'mongoose'
 import { mongo } from '../../configs'
 
-let db
+let db: any
 
 export async function DBConnectMongoose() {
 

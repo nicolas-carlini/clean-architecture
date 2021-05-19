@@ -1,11 +1,8 @@
 import * as DB from "../Adapters/DB"
-import { assert } from "superstruct"
-import { assertList, getIds } from "../../ToolBox/utils"
-import { userSchema } from "../Schemas/Superstruct"
+import { getIds } from "../../ToolBox/utils"
+import { User } from "../Schemas/Types"
 
-export async function create(userData) {
-  assert(userData, userSchema);
-
+export async function create(userData: User) {
   const user = await DB.create(userData);
 
   return {
@@ -14,8 +11,7 @@ export async function create(userData) {
   };
 };
 
-export async function batchCreate(userList) {
-  assertList(userList, userSchema);
+export async function batchCreate(userList: Array<User>) {
 
   const userListCreated = await DB.batchCreate(userList);
 
