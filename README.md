@@ -13,8 +13,6 @@ Este proyecto es principalmente una prueba de diseño, por capaz y desacoplable.
 [CornerCleanArchitectureNode](https://github.com/siro47/CornerCleanArchitectureNode/tree/v3)
 
 ### TODO list
-
-- refactor in ts
 - change entitys to entities xD
 - improve domain disign :construction:
 - implement Makefile :construction:

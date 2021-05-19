@@ -1,5 +1,5 @@
-import { create, batchCreate } from ".."
-import express from "express"
+const { create, batchCreate } = require("..");
+const express = require("express");
 const router = express.Router();
 
 router.post("/create", create);

@@ -1,6 +1,6 @@
 const Rest = require("../../../Adapters/Rest");
 
-export async function create(req: any, res: any, next: any) {
+exports.create = async (req, res, next) => {
   try {
     const user = await Rest.create(req.body);
 
@@ -10,7 +10,7 @@ export async function create(req: any, res: any, next: any) {
   }
 };
 
-export async function batchCreate(req: any, res: any) {
+exports.batchCreate = async (req, res) => {
   try {
     const users = await Rest.batchCreate(req.body);
 

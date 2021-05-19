@@ -1,13 +1,13 @@
 'use strict'
 
-import mongoose from 'mongoose'
-import { mongo } from '../../configs'
+const mongoose = require('mongoose');
+const {mongo} = require('../../configs');
 
-let db: any
+let db
 
-export async function DBConnectMongoose() {
-
-    return new Promise((resolve, reject) => {
+exports.DBConnectMongoose = ()=>{
+    
+    return new Promise((resolve, reject)=>{
         if (db) {
             return db;
         }
@@ -28,7 +28,7 @@ export async function DBConnectMongoose() {
     });
 };
 
-export function getDBConexion() {
+exports.getDBConexion = ()=>{
     if (db) {
         return db;
     }
@@ -37,6 +37,6 @@ export function getDBConexion() {
     return null;
 }
 
-export function dbError() {
-
+exports.dbError = ()=>{
+    
 }
